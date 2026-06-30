@@ -1,16 +1,22 @@
 <?php
+// Base URL sistem (otomatis menyesuaikan environment)
+if (!defined('BASE_URL')) {
+    if (isset($_SERVER['RAILWAY_PUBLIC_DOMAIN'])) {
+        define('BASE_URL', 'https://' . $_SERVER['RAILWAY_PUBLIC_DOMAIN'] . '/');
+    } else {
+        define('BASE_URL', 'http://localhost/sipinv/');
+    }
+}
 
-// Base URL sistem
-define('BASE_URL', 'http://localhost/sipinv/');
-
-// Konfigurasi koneksi database
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'db_inventaris_sipinv');
+// Konfigurasi koneksi database (dinamis: localhost atau Railway)
+define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
+define('DB_USER', getenv('MYSQLUSER') ?: 'root');
+define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: 'db_inventaris_sipinv');
+define('DB_PORT', getenv('MYSQLPORT') ?: 3306);
 
 // Membuat koneksi
-$koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
 // Cek koneksi
 if (!$koneksi) {

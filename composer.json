@@ -1,0 +1,8 @@
+{
+    "name": "sipinv/inventaris",
+    "description": "Sistem Informasi Inventaris Barang PT Salim Ivomas Pratama",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    }
+}
