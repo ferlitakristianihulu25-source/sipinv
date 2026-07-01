@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 $page_title  = 'Barang Masuk';
 $active_menu = 'masuk';
@@ -68,8 +68,8 @@ $data = mysqli_query($koneksi, "SELECT bm.*, b.nama_barang, b.satuan,
 $barang_list = mysqli_query($koneksi, "SELECT id, kode_barang, nama_barang, 
                stok, satuan FROM barang ORDER BY nama_barang");
 
-require_once '../../includes/header.php';
-require_once '../../includes/sidebar.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 
 <!-- PAGE HEADER -->
@@ -270,4 +270,4 @@ function updateInfoBarang(select) {
 }
 </script>
 
-<?php require_once '../../includes/footer.php'; ?>
+require_once __DIR__ . '/../../includes/footer.php'; ?>

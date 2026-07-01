@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 
 // Cek apakah form disubmit via POST

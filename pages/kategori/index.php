@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 $page_title  = 'Kategori Barang';
 $active_menu = 'kategori';
@@ -60,8 +60,8 @@ $data   = mysqli_query($koneksi, "SELECT k.*, COUNT(b.id) as jumlah_barang
            FROM kategori k LEFT JOIN barang b ON k.id = b.kategori_id 
            $where GROUP BY k.id ORDER BY k.created_at DESC");
 
-require_once '../../includes/header.php';
-require_once '../../includes/sidebar.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 
 <!-- PAGE HEADER -->
@@ -277,4 +277,4 @@ document.getElementById('modalEdit')?.addEventListener('show.bs.modal', function
 });
 </script>
 
-<?php require_once '../../includes/footer.php'; ?>
+require_once __DIR__ . '/../../includes/footer.php'; ?>

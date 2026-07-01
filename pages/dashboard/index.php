@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 $page_title  = 'Dashboard';
 $active_menu = 'dashboard';
@@ -56,8 +56,8 @@ $q_transaksi = mysqli_query($koneksi, "
 $q_menipis = mysqli_query($koneksi, "SELECT nama_barang, stok, satuan FROM barang 
               WHERE stok <= 10 ORDER BY stok ASC LIMIT 5");
 
-require_once '../../includes/header.php';
-require_once '../../includes/sidebar.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 
 <!-- PAGE HEADER -->
@@ -258,4 +258,4 @@ new Chart(ctx, {
 });
 </script>
 
-<?php require_once '../../includes/footer.php'; ?>
+require_once __DIR__ . '/../../includes/footer.php'; ?>

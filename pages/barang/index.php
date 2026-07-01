@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 $page_title  = 'Data Barang';
 $active_menu = 'barang';
@@ -82,8 +82,8 @@ $data = mysqli_query($koneksi, "SELECT b.*, k.nama_kategori
 // Ambil semua kategori untuk dropdown
 $kategori_list = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY nama_kategori");
 
-require_once '../../includes/header.php';
-require_once '../../includes/sidebar.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 
 <!-- PAGE HEADER -->
@@ -387,4 +387,4 @@ document.getElementById('modalEdit')?.addEventListener('show.bs.modal', function
 });
 </script>
 
-<?php require_once '../../includes/footer.php'; ?>
+require_once __DIR__ . '/../../includes/footer.php'; ?>

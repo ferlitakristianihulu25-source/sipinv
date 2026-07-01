@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 $page_title  = 'Manajemen User';
 $active_menu = 'users';
@@ -70,8 +70,8 @@ if (isset($_GET['hapus'])) {
 // ===== AMBIL DATA =====
 $data = mysqli_query($koneksi, "SELECT * FROM users ORDER BY role ASC, nama ASC");
 
-require_once '../../includes/header.php';
-require_once '../../includes/sidebar.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 
 <!-- PAGE HEADER -->
@@ -309,4 +309,4 @@ document.getElementById('modalEdit').addEventListener('show.bs.modal', function(
 });
 </script>
 
-<?php require_once '../../includes/footer.php'; ?>
+require_once __DIR__ . '/../../includes/footer.php'; ?>

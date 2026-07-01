@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
+require_once __DIR__ . '/../../config/koneksi.php';
 
 $page_title  = 'Laporan Inventaris';
 $active_menu = 'laporan';
@@ -40,8 +40,8 @@ $total_barang     = mysqli_fetch_assoc(mysqli_query($koneksi,
 $total_stok_all   = mysqli_fetch_assoc(mysqli_query($koneksi,
     "SELECT COALESCE(SUM(stok),0) as total FROM barang"))['total'];
 
-require_once '../../includes/header.php';
-require_once '../../includes/sidebar.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 
 <!-- PAGE HEADER -->
@@ -213,4 +213,4 @@ require_once '../../includes/sidebar.php';
     </div>
 </div>
 
-<?php require_once '../../includes/footer.php'; ?>
+require_once __DIR__ . '/../../includes/footer.php'; ?>
