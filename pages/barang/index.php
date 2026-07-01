@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../config/koneksi.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config/koneksi.php';
 
 $page_title  = 'Data Barang';
 $active_menu = 'barang';

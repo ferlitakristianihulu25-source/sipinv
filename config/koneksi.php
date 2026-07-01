@@ -1,5 +1,7 @@
 <?php
-// Base URL sistem (otomatis menyesuaikan environment)
+define('ROOT_PATH', dirname(dirname(__FILE__)));
+
+// Base URL sistem
 if (!defined('BASE_URL')) {
     if (isset($_SERVER['RAILWAY_PUBLIC_DOMAIN'])) {
         define('BASE_URL', 'https://' . $_SERVER['RAILWAY_PUBLIC_DOMAIN'] . '/');
