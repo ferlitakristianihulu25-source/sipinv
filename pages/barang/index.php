@@ -387,4 +387,4 @@ document.getElementById('modalEdit')?.addEventListener('show.bs.modal', function
 });
 </script>
 
-require_once __DIR__ . '/../../includes/footer.php'; ?>
+<?php require_once__DIR__ . '/../../includes/footer.php'; ?>
