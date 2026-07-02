@@ -3,8 +3,9 @@ define('ROOT_PATH', dirname(dirname(__FILE__)));
 
 // Base URL sistem
 if (!defined('BASE_URL')) {
-    if (isset($_SERVER['RAILWAY_PUBLIC_DOMAIN'])) {
-        define('BASE_URL', 'https://' . $_SERVER['RAILWAY_PUBLIC_DOMAIN'] . '/');
+    if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] !== 'localhost') {
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+        define('BASE_URL', $protocol . '://' . $_SERVER['HTTP_HOST'] . '/');
     } else {
         define('BASE_URL', 'http://localhost/sipinv/');
     }
